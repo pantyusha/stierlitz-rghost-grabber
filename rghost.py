@@ -10,7 +10,6 @@ import gevent.pool
 import itertools
 import time
 import glob
-import requests
 import random
 import requesocks
 
@@ -167,7 +166,6 @@ def handle_file(response, filename):
                 os.unlink(filename + '.part')
             except Exception:
                 error("Failed to unlink file %s.part", filename, exc_info=True)
-        raise
     os.rename(filename + '.part', filename)
     return size
 
